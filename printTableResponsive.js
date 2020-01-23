@@ -100,13 +100,13 @@ $.fn.printTableResponsive = function() {
                             }
                             let row = '<tr>' + rowHTML + '</tr>';
                             tableBody.append(row);
-                            if (colCounter != tableDate.titles.length) {
+                            if (colCounter !== tableDate.titles.length) {
                                 rowHTML = '';
-                                    for (let cellCounter = colCounter; cellCounter < tableDate.titles.length; cellCounter++ ) {
-                                        rowHTML += '<li><b>' + tableDate.titles[cellCounter] + '</b>: ' + tableDate.data[rowCounter][cellCounter] + '</li>';
-                                    }
-                                    row = '<tr><td colspan="' + colCounter + '"><ul>' + rowHTML + '</ul></td></tr>';
-                                    tableBody.append(row);                                
+                                for (let cellCounter = colCounter; cellCounter < tableDate.titles.length; cellCounter++ ) {
+                                    rowHTML += '<li><b>' + tableDate.titles[cellCounter] + '</b>: ' + tableDate.data[rowCounter][cellCounter] + '</li>';
+                                }
+                                row = '<tr><td colspan="' + colCounter + '"><ul>' + rowHTML + '</ul></td></tr>';
+                                tableBody.append(row);                                
                             }
                         }
                         table.css('visibility', 'visible');
